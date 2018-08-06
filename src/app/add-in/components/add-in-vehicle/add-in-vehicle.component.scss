@@ -7,9 +7,7 @@
     &__icon-box {        
         
         padding: 1rem 1.5rem;
-        border-radius: 5px;
-        // border: solid 1px darken($primary-color, 10);
-        // border: solid 1px lighten($primary-color, 30);;
+        border-radius: 5px;        
         background-color: lighten($primary-color, 10);
 
         img {
@@ -23,7 +21,7 @@
 
         &:not(:last-child) {
             margin-right: 2rem;
-        }
+        }        
     }
 
     &__container {

@@ -1,5 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
-
+@import url('https://fonts.googleapis.com/css?family=Nunito:300,400,700');
 
 *,
 *::after,
@@ -11,7 +10,8 @@
 
 html {
     height: 100vh;
-    font-size: 62.5%;   // 1rem = 10px
+    font-size: 62.5%;   // 1rem = 10px    
+    font-family: 'Nunito', sans-serif;
 }
 
 body {

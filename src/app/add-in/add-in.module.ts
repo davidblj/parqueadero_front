@@ -6,7 +6,8 @@ import { AddInComponent } from './components/add-in/add-in.component';
 import { AddInFormContainerComponent } from './containers/add-in-form-container/add-in-form-container.component';
 import { AddInFormComponent } from './components/add-in-form/add-in-form.component';
 import { AddInFormFieldComponent } from './components/add-in-form-field/add-in-form-field.component';
-import { AddInVehicleComponent } from './components/add-in-vehicle/add-in-vehicle.component'
+import { AddInVehicleComponent } from './components/add-in-vehicle/add-in-vehicle.component';
+import { AddInSendComponent } from './components/add-in-send/add-in-send.component'
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import { AddInVehicleComponent } from './components/add-in-vehicle/add-in-vehicl
     AddInFormContainerComponent,
     AddInFormComponent,
     AddInFormFieldComponent,
-    AddInVehicleComponent
+    AddInVehicleComponent,
+    AddInSendComponent
   ]
 })
 export class AddInModule { }
