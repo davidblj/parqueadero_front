@@ -1,6 +1,17 @@
 
 <div class="form-container">
-  <app-add-in-form-field></app-add-in-form-field>
-  <app-add-in-vehicle></app-add-in-vehicle>  
+  
+  <app-add-in-form-field
+    [config]="formConfig.id">
+  </app-add-in-form-field>     
+
+  <app-add-in-vehicle>
+  </app-add-in-vehicle>  
+
+  <app-add-in-form-field
+    [config]="formConfig.engine">
+  </app-add-in-form-field>
+
   <app-add-in-send></app-add-in-send>
+
 </div>

@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AddInRoutingModule } from './add-in-routing.module';
+import { ReactiveFormsModule } from '../../../node_modules/@angular/forms';
+
 import { AddInComponent } from './components/add-in/add-in.component';
 import { AddInFormContainerComponent } from './containers/add-in-form-container/add-in-form-container.component';
 import { AddInFormComponent } from './components/add-in-form/add-in-form.component';
@@ -13,7 +15,8 @@ import { AddInStatusComponent } from './components/add-in-status/add-in-status.c
 @NgModule({
   imports: [
     CommonModule,
-    AddInRoutingModule
+    AddInRoutingModule,
+    ReactiveFormsModule
   ],
   exports: [
     AddInComponent
