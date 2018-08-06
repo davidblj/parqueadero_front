@@ -1,0 +1,39 @@
+@import "~src/variables.scss";
+
+.status {
+
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    
+    background: $color-white;
+    margin: 2rem;
+    padding: 2rem;
+    border-radius: 5px;
+    font-size: 1.5rem;
+
+    &__item {
+
+        display: inline-block;
+
+        &:not(:last-child) {
+            margin-right: 2rem;
+        }
+    }
+
+    &__label { }
+
+    &__value {
+
+        font-weight: 700;
+
+        &_green {
+            color: $color-green;
+        }
+
+        &_red {
+            color: $color-red;
+        }
+    }    
+}
