@@ -19,6 +19,7 @@ export class AddInVehicleComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.watchForResets();
   }
 
   onClick(type: VehicleType) {
@@ -28,5 +29,14 @@ export class AddInVehicleComponent implements OnInit {
 
   isActive(type: VehicleType) {
     return this.currentType === type;
+  }
+
+  watchForResets() {
+
+    this.control.valueChanges.subscribe(value => {
+      if (!value) {
+        this.currentType = null;
+      }
+    });
   }
 }

@@ -24,7 +24,7 @@ export class AddInFormComponent implements OnInit {
     this.initFormConfiguration();
   }
 
-  private createForm() {
+  createForm() {
 
     this.form = this.fb.group({
       id: [ '', [
@@ -49,23 +49,29 @@ export class AddInFormComponent implements OnInit {
       });
   }
 
-  // TODO: check clean code
+  sendVehicle() {
+    if (this.form.valid) {
+      this.form.reset();
+    }
+  }
+
   setBikeInputConfiguration(type: string) {
-
     const engineShouldHide = type !== this.bike.valueOf();
-    if (!engineShouldHide) {
+    this.setBikeInputDynamically(engineShouldHide);
+    this.engineShouldHide = engineShouldHide;
+  }
 
-      this.form.addControl('engine', new FormControl('', [
-        numericValidator(),
-        Validators.required]
-      ));
+  private setBikeInputDynamically(shouldHideInput: boolean) {
+
+    if (!shouldHideInput) {
+
+      const engineControl = new FormControl('', [numericValidator(), Validators.required]);
+      this.form.addControl('engine', engineControl);
       this.formConfig.createEngineInput();
 
     } else {
       this.form.removeControl('engine');
     }
-
-    this.engineShouldHide = engineShouldHide;
   }
 
   get formStatus() {

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from "@angular/core";
+import {Component, EventEmitter, Input, Output, OnInit} from "@angular/core";
 
 @Component({
   selector: 'app-add-in-send',
@@ -10,9 +10,15 @@ export class AddInSendComponent implements OnInit {
   @Input()
   status: boolean;
 
+  @Output()
+  click = new EventEmitter<any>();
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  onClick() {
+    this.click.emit();
+  }
 }
