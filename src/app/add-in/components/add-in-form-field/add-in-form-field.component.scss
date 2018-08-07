@@ -3,21 +3,21 @@
 .form-field {
 
     &__input {
-    
+
         width: $add-in-input-width;
         padding: 2rem;
-        
-        border-radius: 5px;
-        border: none;        
-            
-        text-align: center;
-        text-transform: uppercase;        
-    
-        font-size: 1.7rem;
-        letter-spacing: 3px;    
-        outline: none;            
 
-        &::placeholder {            
+        border-radius: 5px;
+        border: none;
+
+        text-align: center;
+        text-transform: uppercase;
+
+        font-size: 1.7rem;
+        letter-spacing: 3px;
+        outline: none;
+
+        &::placeholder {
             font-size: 1.5rem;
             text-transform: lowercase;
         }
@@ -33,13 +33,22 @@
         }
 
         &_dark {
-            
+
             color: $color-white;
             background-color: lighten($primary-color, 20);
 
             &::placeholder {
-                color: darken($color-white, 5);                
+                color: darken($color-white, 5);
             }
         }
+    }
+
+    &__error {
+
+        margin-top: 1rem;
+        text-align: center;
+        color: $color-white;
+        font-size: 1.3rem;
+        font-weight: 700;
     }
 }

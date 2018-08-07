@@ -38,4 +38,12 @@ export class AddInFormFieldComponent implements OnInit {
   get control() {
     return this.config.control;
   }
+
+  get isRequired() {
+    return this.control.hasError('required') && this.control.touched;
+  }
+
+  get isNotNumeric() {
+    return this.control.hasError('non-numeric') && this.control.touched;
+  }
 }

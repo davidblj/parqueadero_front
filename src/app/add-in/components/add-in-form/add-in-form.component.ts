@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormBuilder, Validators, FormControl} from "../../../../../node_modules/@angular/forms";
 import { FormConfig } from './form-config';
 import {VehicleType} from "../../shared/vehicle.interface";
+import {numericValidator} from "../../shared/custom-validators";
 
 @Component({
   selector: 'app-add-in-form',
@@ -54,7 +55,10 @@ export class AddInFormComponent implements OnInit {
     const engineShouldHide = type !== this.bike.valueOf();
     if (!engineShouldHide) {
 
-      this.form.addControl('engine', new FormControl('', Validators.required));
+      this.form.addControl('engine', new FormControl('', [
+        numericValidator(),
+        Validators.required]
+      ));
       this.formConfig.createEngineInput();
 
     } else {
