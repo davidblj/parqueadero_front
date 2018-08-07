@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from "@angular/core";
 import {FormGroup, FormBuilder, Validators, FormControl} from "../../../../../node_modules/@angular/forms";
-import { FormConfig } from './form-config';
+import {FormConfig} from './form-config';
 import {VehicleType} from "../../shared/vehicle.interface";
 import {numericValidator} from "../../shared/custom-validators";
 
@@ -10,6 +10,9 @@ import {numericValidator} from "../../shared/custom-validators";
   styleUrls: ['./add-in-form.component.scss']
 })
 export class AddInFormComponent implements OnInit {
+
+  @Output()
+  add = new EventEmitter<any>();
 
   formConfig: FormConfig;
   form: FormGroup;
@@ -51,7 +54,8 @@ export class AddInFormComponent implements OnInit {
 
   sendVehicle() {
     if (this.form.valid) {
-      this.form.reset();
+      this.add.emit();
+      this.form.reset({id: '', type: ''});
     }
   }
 
@@ -70,8 +74,15 @@ export class AddInFormComponent implements OnInit {
       this.formConfig.createEngineInput();
 
     } else {
+
       this.form.removeControl('engine');
     }
+  }
+
+  // TODO: do not remove the engine control after a reset
+  get engineControlIsUnset() {
+    const engineControl = this.form.controls['engine'];
+    return engineControl !== null;
   }
 
   get formStatus() {

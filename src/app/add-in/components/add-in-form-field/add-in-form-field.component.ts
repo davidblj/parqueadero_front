@@ -44,6 +44,6 @@ export class AddInFormFieldComponent implements OnInit {
   }
 
   get isNotNumeric() {
-    return this.control.hasError('non-numeric') && this.control.touched;
+    return this.control.hasError('non-numeric') && this.control.dirty;
   }
 }

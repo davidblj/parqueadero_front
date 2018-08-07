@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { AddInRoutingModule } from './add-in-routing.module';
 import { ReactiveFormsModule } from '../../../node_modules/@angular/forms';
+import { ModalModule } from "ngx-bootstrap/modal";
 
 import { AddInComponent } from './components/add-in/add-in.component';
 import { AddInFormContainerComponent } from './containers/add-in-form-container/add-in-form-container.component';
@@ -10,16 +11,21 @@ import { AddInFormComponent } from './components/add-in-form/add-in-form.compone
 import { AddInFormFieldComponent } from './components/add-in-form-field/add-in-form-field.component';
 import { AddInVehicleComponent } from './components/add-in-vehicle/add-in-vehicle.component';
 import { AddInSendComponent } from './components/add-in-send/add-in-send.component';
-import { AddInStatusComponent } from './components/add-in-status/add-in-status.component'
+import { AddInStatusComponent } from './components/add-in-status/add-in-status.component';
+import { AddInModalComponent } from './components/add-in-modal/add-in-modal.component';
 
 @NgModule({
   imports: [
     CommonModule,
     AddInRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ModalModule.forRoot(),
   ],
   exports: [
     AddInComponent
+  ],
+  entryComponents: [
+    AddInModalComponent
   ],
   declarations: [
     AddInComponent,
@@ -28,7 +34,8 @@ import { AddInStatusComponent } from './components/add-in-status/add-in-status.c
     AddInFormFieldComponent,
     AddInVehicleComponent,
     AddInSendComponent,
-    AddInStatusComponent
+    AddInStatusComponent,
+    AddInModalComponent
   ]
 })
 export class AddInModule { }

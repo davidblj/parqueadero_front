@@ -12,23 +12,27 @@
 
         font-size: 1.5rem;
         font-weight: 700;
-        color: white;
         border: solid 2px white;
         border-radius: 50px;
         padding: 1.2rem 5rem;
         transition: all .4s;
 
         &_disabled {
+
+          color: white;
+          background: $primary-color;
           cursor: not-allowed;
         }
 
         &_enabled {
 
+          color: white;
+          background: $primary-color;
+
           &:hover {
 
             cursor: pointer;
             transform: translateY(-2px);
-
             color: $primary-color;
             background-color: $color-white;
           }
