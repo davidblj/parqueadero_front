@@ -1,36 +1,46 @@
 import { FormInput, FormInputColor } from "../../../utils/form-input.interface";
-import { FormGroup } from "../../../../../node_modules/@angular/forms";
+import {AbstractControl, FormGroup} from "../../../../../node_modules/@angular/forms";
 
 export class FormConfig {
 
     readonly form: FormGroup;
     private _id: FormInput;
     private _engine: FormInput;
+    private _type: AbstractControl;
 
     constructor(form: FormGroup) {
         this.form = form;
         this.createIdInput();
         this.createEngineInput();
+        this.createTypeInput();
     }
-    
-    private createIdInput() {
+
+    createIdInput() {
         this._id = {
             color: FormInputColor.dark,
             control: this.form.controls['id'],
             placeholder: 'placa'
-        }
+        };
     }
 
-    private createEngineInput() {
+    createEngineInput() {
         this._engine = {
             color: FormInputColor.light,
             control: this.form.controls['engine'],
-            placeholder: 'cilindraje' 
-        }
+            placeholder: 'cilindraje'
+        };
+    }
+
+    createTypeInput() {
+      this._type = this.form.controls['type'];
     }
 
     get id() {
         return this._id;
+    }
+
+    get type() {
+      return this._type;
     }
 
     get engine() {

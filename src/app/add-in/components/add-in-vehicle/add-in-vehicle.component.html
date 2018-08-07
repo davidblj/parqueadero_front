@@ -1,11 +1,18 @@
 
 <div class="type">
   <div class="type__container">
-    <div class="type__icon-box">
+
+    <div class="type__icon-box"
+         [ngClass]="{'type__icon-box_active': isActive(car)}"
+         (click)="onClick(car)">
       <img src="assets/car.svg"/>
     </div>
-    <div class="type__icon-box">
+
+    <div class="type__icon-box"
+         [ngClass]="{'type__icon-box_active': isActive(bike)}"
+         (click)="onClick(bike)">
       <img src="assets/scooter.svg"/>
     </div>
-  </div>  
+
+  </div>
 </div>

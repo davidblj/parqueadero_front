@@ -1,3 +1,7 @@
 <div class="send">
-  <a class="send__btn">registrar</a>
+  <a class="send__btn"
+     [ngClass]="{'send__btn_disabled': !status,
+                 'send__btn_enabled': status}" >
+    registrar
+  </a>
 </div>

@@ -9,16 +9,16 @@ import { FormInput } from '../../../utils/form-input.interface';
 export class AddInFormFieldComponent implements OnInit {
 
   @Input()
-  config: FormInput;  
+  config: FormInput;
 
   placeholder;
 
   constructor() { }
 
   ngOnInit() {
-    this.placeholder = this.getPlaceholder(); 
+    this.placeholder = this.getPlaceholder();
   }
-  
+
   onFocus() {
     this.placeholder = '';
   }
@@ -27,11 +27,15 @@ export class AddInFormFieldComponent implements OnInit {
     this.placeholder = this.getPlaceholder();
   }
 
-  getColor(toneColor: string) {
-    return this.config.color == toneColor;
+  getColor(color: string) {
+    return this.config.color === color;
   }
 
   getPlaceholder() {
     return this.config.placeholder;
-  }  
+  }
+
+  get control() {
+    return this.config.control;
+  }
 }

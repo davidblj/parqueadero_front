@@ -1,9 +1,10 @@
 
 <div class="form-field">
     <input  [placeholder]="placeholder"
-            class="form-field__input"
+            [formControl]="control"
             (blur)="onBlur()"
             (focus)="onFocus()"
+            class="form-field__input"
             [ngClass]="{'form-field__input_light': getColor('light'),
                         'form-field__input_dark': getColor('dark')}">
 </div>

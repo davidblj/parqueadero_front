@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from "@angular/core";
 
 @Component({
   selector: 'app-add-in-send',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-in-send.component.scss']
 })
 export class AddInSendComponent implements OnInit {
+
+  @Input()
+  status: boolean;
 
   constructor() { }
 
