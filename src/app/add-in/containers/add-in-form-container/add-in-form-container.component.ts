@@ -16,16 +16,17 @@ export class AddInFormContainerComponent implements OnInit {
   }
 
   addHandler() {
+    // call service
     console.log('omg, an output!');
-    const config = this.setModalConfig('', false);
+    const config = this.setModalConfig({ message: '',  error: false });
     this.modalService.show(AddInModalComponent, config);
   }
 
-  setModalConfig(message: string, error: boolean) {
+  setModalConfig(initialState) {
     return {
       class: 'modal-dialog-centered',
       animated: false,
-      initialState: { message: message,  error: error }
+      initialState
     };
   }
 }
