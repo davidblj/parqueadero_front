@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {BsModalService} from "ngx-bootstrap";
 import {AddInModalComponent} from "../../components/add-in-modal/add-in-modal.component";
+import {Vehicle} from "../../shared/vehicle.interface";
 
 @Component({
   selector: 'app-add-in-form-container',
@@ -12,12 +13,12 @@ export class AddInFormContainerComponent implements OnInit {
   constructor(private modalService: BsModalService) { }
 
   ngOnInit() {
-    this.addHandler();
+    this.addHandler(null);
   }
 
-  addHandler() {
+  addHandler(vehicle: Vehicle) {
     // call service
-    console.log('omg, an output!');
+    console.log(vehicle);
     const config = this.setModalConfig({ message: '',  error: false });
     this.modalService.show(AddInModalComponent, config);
   }

@@ -1,7 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from "@angular/core";
 import {FormGroup, FormBuilder, Validators, FormControl} from "../../../../../node_modules/@angular/forms";
 import {FormConfig} from './form-config';
-import {VehicleType} from "../../shared/vehicle.interface";
+import {Vehicle, VehicleType} from "../../shared/vehicle.interface";
 import {numericValidator} from "../../shared/custom-validators";
 
 @Component({
@@ -12,7 +12,7 @@ import {numericValidator} from "../../shared/custom-validators";
 export class AddInFormComponent implements OnInit {
 
   @Output()
-  add = new EventEmitter<any>();
+  add = new EventEmitter<Vehicle>();
 
   formConfig: FormConfig;
   form: FormGroup;
@@ -54,7 +54,7 @@ export class AddInFormComponent implements OnInit {
 
   sendVehicle() {
     if (this.form.valid) {
-      this.add.emit();
+      this.add.emit(this.form.value);
       this.form.reset({id: '', type: ''});
     }
   }
