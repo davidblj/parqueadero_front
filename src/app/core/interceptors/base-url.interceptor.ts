@@ -3,7 +3,7 @@ import { Observable } from "../../../../node_modules/rxjs";
 
 export class BaseUrlInterceptor implements HttpInterceptor {
 
-    baseURL = 'http://localhost:8080';
+    baseURL = 'http://localhost:8080/api/1.0/';
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable< HttpEvent<any> > {
 

@@ -14,6 +14,7 @@ import { AddInSendComponent } from './components/add-in-send/add-in-send.compone
 import { AddInStatusComponent } from './components/add-in-status/add-in-status.component';
 import { AddInModalComponent } from './components/add-in-modal/add-in-modal.component';
 import {VehicleService} from "./shared/vehicle.service";
+import { HttpClientModule } from '../../../node_modules/@angular/common/http';
 
 @NgModule({
   imports: [

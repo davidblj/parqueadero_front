@@ -4,9 +4,9 @@ import {AbstractControl, FormGroup} from "../../../../../node_modules/@angular/f
 export class FormConfig {
 
     readonly form: FormGroup;
-    private _id: FormInput;
-    private _engine: FormInput;
-    private _type: AbstractControl;
+    private _placa: FormInput;
+    private _cilindraje: FormInput;
+    private _tipo: AbstractControl;
 
     constructor(form: FormGroup) {
         this.form = form;
@@ -16,34 +16,34 @@ export class FormConfig {
     }
 
     createIdInput() {
-        this._id = {
+        this._placa = {
             color: FormInputColor.dark,
-            control: this.form.controls['id'],
+            control: this.form.controls['placa'],
             placeholder: 'placa'
         };
     }
 
     createEngineInput() {
-        this._engine = {
+        this._cilindraje = {
             color: FormInputColor.light,
-            control: this.form.controls['engine'],
+            control: this.form.controls['cilindraje'],
             placeholder: 'cilindraje'
         };
     }
 
     createTypeInput() {
-      this._type = this.form.controls['type'];
+      this._tipo = this.form.controls['tipo'];
     }
 
     get id() {
-        return this._id;
+        return this._placa;
     }
 
     get type() {
-      return this._type;
+      return this._tipo;
     }
 
     get engine() {
-        return this._engine;
+        return this._cilindraje;
     }
 }

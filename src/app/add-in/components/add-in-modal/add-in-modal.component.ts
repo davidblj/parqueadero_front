@@ -9,7 +9,8 @@ import {BsModalRef} from "ngx-bootstrap";
 export class AddInModalComponent implements OnInit {
 
   message: string;
-  error;
+  id: string;
+  error: boolean;
 
   constructor(public bsModalRef: BsModalRef) { }
 

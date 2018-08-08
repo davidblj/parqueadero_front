@@ -9,7 +9,7 @@ import {Observable} from "rxjs";
 })
 export class VehicleService {
 
-  baseUrl = 'vehiculos';
+  baseUrl = 'parqueadero/vehiculos';
 
   constructor(private http: HttpClient) {}
 

@@ -30,10 +30,10 @@ export class AddInFormComponent implements OnInit {
   createForm() {
 
     this.form = this.fb.group({
-      id: [ '', [
+      placa: [ '', [
         Validators.required
       ]],
-      type: [ '', [
+      tipo: [ '', [
         Validators.required
       ]]
     });
@@ -46,7 +46,7 @@ export class AddInFormComponent implements OnInit {
   }
 
   watchTypeInput() {
-    this.form.controls['type'].valueChanges
+    this.form.controls['tipo'].valueChanges
       .subscribe(type => {
         this.setBikeInputConfiguration(type);
       });
@@ -70,18 +70,18 @@ export class AddInFormComponent implements OnInit {
     if (!shouldHideInput) {
 
       const engineControl = new FormControl('', [numericValidator(), Validators.required]);
-      this.form.addControl('engine', engineControl);
+      this.form.addControl('cilindraje', engineControl);
       this.formConfig.createEngineInput();
 
     } else {
 
-      this.form.removeControl('engine');
+      this.form.removeControl('cilindraje');
     }
   }
 
   // TODO: do not remove the engine control after a reset
   get engineControlIsUnset() {
-    const engineControl = this.form.controls['engine'];
+    const engineControl = this.form.controls['cilindraje'];
     return engineControl !== null;
   }
 

@@ -4,7 +4,7 @@ export enum VehicleType {
 }
 
 export interface Vehicle {
-  id: string;
-  type: VehicleType;
-  engine?: string;
+  placa: string;
+  tipo: VehicleType;
+  cilindraje?: string;
 }
