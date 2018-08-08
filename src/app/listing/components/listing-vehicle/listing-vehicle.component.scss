@@ -1,0 +1,55 @@
+@import "~src/variables.scss";
+
+.vehicle {
+
+    // height: 6rem;
+    display: flex;
+    border-radius: 5px;
+    background-color: $primary-color-light-2;    
+    padding: 2rem;
+
+    &__details {
+        flex-grow: 4;
+    }
+
+    &__id {
+        color: $color-white;
+        font-size: 2.7rem;        
+        letter-spacing: 3px;
+    }
+
+    &__date {
+        font-size: 2rem;    
+        font-style: italic;    
+        color: $color-white;
+    }
+
+    &__type {
+
+        flex-grow: 1;
+        align-self: center;
+        border-radius: 5px;        
+
+        img {            
+            height: 6rem;
+            padding: 1rem;
+            border-radius: 5px;
+            background-color: $primary-color-light-1;            
+        }
+    }
+
+    &__delete {
+
+        flex-grow: 1;
+        align-self: center;        
+
+        img {
+            height: 3.5rem;
+        }
+
+        &:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+    }
+}

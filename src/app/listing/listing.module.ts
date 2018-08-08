@@ -4,6 +4,7 @@ import { ListingRoutingModule } from './listing-routing.module';
 import { ListingComponent } from './components/listing/listing.component';
 import { ListingVehiclesContainerComponent } from './containers/listing-vehicles-container/listing-vehicles-container.component';
 import { ListingVehiclesComponent } from './components/listing-vehicles/listing-vehicles.component';
+import { ListingVehicleComponent } from './components/listing-vehicle/listing-vehicle.component';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { ListingVehiclesComponent } from './components/listing-vehicles/listing-
   declarations: [
     ListingComponent,
     ListingVehiclesContainerComponent,
-    ListingVehiclesComponent
+    ListingVehiclesComponent,
+    ListingVehicleComponent    
   ]
 })
 export class ListingModule { }

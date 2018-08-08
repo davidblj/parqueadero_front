@@ -1,9 +1,15 @@
 
 $primary-color: #374766;
+$primary-color-light-1: lighten($primary-color, 5);
+$primary-color-light-2: lighten($primary-color, 10);
 
 $color-white: #fff;
-$color-green: #48a9a6 ;
+$color-green: #48a9a6;
 $color-red: #DB7676;
 $color-transparent: #f1f0f0;
 
+// add-in module variables
 $add-in-input-width: 30rem;
+
+// app module variables
+$nav-panel-width: 7rem;

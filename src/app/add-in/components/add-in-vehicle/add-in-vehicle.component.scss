@@ -8,7 +8,7 @@
 
         padding: 1rem 1.5rem;
         border-radius: 5px;
-        background-color: lighten($primary-color, 10);
+        background-color: $primary-color-light-2;
         border: 2px solid $primary-color;
 
         img {
@@ -22,14 +22,14 @@
         &:hover {
 
             transform: scale(1.1);
-            background-color: lighten($primary-color, 5);
+            background-color: $primary-color-light-1;
         }
 
         &_active {
 
             border: 2px solid $color-white;
             transform: scale(1.1);
-            background-color: lighten($primary-color, 5);
+            background-color: $primary-color-light-1;
         }
     }
 
