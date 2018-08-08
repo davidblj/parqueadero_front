@@ -16,24 +16,24 @@ export class AddInFormContainerComponent implements OnInit {
               private vehicleService: VehicleService) { }
 
   ngOnInit() {
-    // this.addHandler(null);
   }
 
-  addHandler(vehicle: Vehicle) {
-    // call service
+  addHandler(vehicle: Vehicle) {    
     console.log(vehicle);    
     this.vehicleService.add(vehicle).subscribe(
-      (res) => { this.handleSuccessfulResponse(vehicle.id); },
+      (res) => { this.handleSuccessfulResponse(vehicle.placa); },
       (error) => { this.handleFailedResponse(error); }
     );
   }
 
   handleSuccessfulResponse(id: string) {
-    this.setModalConfig({ message: 'success !',  error: false });
+    const config = this.setModalConfig({ id, errroMessage: null, error: false });
+    this.showModal(config);
   }
 
-  handleFailedResponse(error: HttpErrorResponse) {
-    this.setModalConfig({ message: error.message, id: null, error: true });
+  handleFailedResponse(error) {
+    const config = this.setModalConfig({ id: null, errorMessage: error.error.mensaje, error: true });
+    this.showModal(config);
   }
 
   // TODO: type checking

@@ -1,6 +1,6 @@
 import {AbstractControl, ValidatorFn} from "@angular/forms";
 
-export function numericValidator(): ValidatorFn {
+export function numericValidator(): ValidatorFn {  
 
   return (control: AbstractControl): {[key: string]: any} | null => {
     const numericRegex = /^\d+$/;
@@ -9,3 +9,5 @@ export function numericValidator(): ValidatorFn {
     return dontComply ? {'non-numeric': {value: value}} : null;
   };
 }
+
+// TODO: regex validation: dos letras, dos numeros, un letra opcional

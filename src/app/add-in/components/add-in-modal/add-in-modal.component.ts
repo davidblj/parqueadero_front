@@ -8,8 +8,8 @@ import {BsModalRef} from "ngx-bootstrap";
 })
 export class AddInModalComponent implements OnInit {
 
-  message: string;
   id: string;
+  errorMessage: string;  
   error: boolean;
 
   constructor(public bsModalRef: BsModalRef) { }

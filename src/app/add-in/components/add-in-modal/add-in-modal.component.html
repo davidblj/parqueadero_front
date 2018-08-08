@@ -1,15 +1,23 @@
 
-<div class="custom-modal">
-  <div class="custom-modal__body">
-    <p class="custom-modal__text">El vehiculo con placa:</p>
-    <p class="custom-modal__text_highlight">WMQ999</p>
-    <p class="custom-modal__text">se ha registrado</p>
-  </div>
-</div>
+<ng-container
+  *ngIf="error; then failure; else success">
+</ng-container>
 
-<!-- <div class="custom-modal custom-modal_error">
-  <div class="custom-modal__header">error</div>
-  <div class="custom-modal__body">
-    <p class="custom-modal__text">El vehiculo ya se encuentra registrado</p>
+<ng-template #success>
+  <div class="custom-modal">
+    <div class="custom-modal__body">
+      <p class="custom-modal__text">El vehiculo con placa:</p>
+      <p class="custom-modal__text_highlight">{{id}}</p>
+      <p class="custom-modal__text">se ha registrado</p>
+    </div>
+  </div>  
+</ng-template>
+
+<ng-template #failure>
+  <div class="custom-modal custom-modal_error">
+    <div class="custom-modal__header">error</div>
+    <div class="custom-modal__body">
+      <p class="custom-modal__text">{{errorMessage}}</p>
+    </div>
   </div>
-</div>-->
+</ng-template>
