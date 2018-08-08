@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { rootRenderNodes } from '../../../node_modules/@angular/core/src/view';
+import { Router } from '../../../node_modules/@angular/router';
 
 @Component({
   selector: 'app-nav-panel',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavPanelComponent implements OnInit {
 
-  constructor() { }
+  addInModuleRoute = '/parqueadero/vehiculos/agregar';
+  ListingModuleRoute = '/parqueadero/vehiculos';
 
-  ngOnInit() {
-  }
+  activatedRoute;
 
+  constructor(private router: Router) { }
+
+  // TODO: swap the icons depending on 
+  // the current activated route
+  ngOnInit() { }
+
+  onClick(route: string) {
+    this.router.navigate([route])
+  } 
 }

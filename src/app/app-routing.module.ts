@@ -3,14 +3,23 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
     {
-        path:  'agregar',
+        path:  'parqueadero/vehiculos/agregar',
         loadChildren: './add-in/add-in.module#AddInModule'
+    },
+    {
+        path:  'parqueadero/vehiculos',
+        loadChildren: './listing/listing.module#ListingModule'
+    },
+    {
+        path: '',
+        redirectTo: '/parqueadero/vehiculos/agregar',
+        pathMatch: 'full'
     }
 ]
 
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule]
-  })
+})
 
-  export class AppRoutingModule { }
+export class AppRoutingModule { }
