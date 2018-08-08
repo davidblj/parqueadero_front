@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {BsModalService} from "ngx-bootstrap";
 import {AddInModalComponent} from "../../components/add-in-modal/add-in-modal.component";
 import {Vehicle} from "../../shared/vehicle.interface";
-import { VehicleService } from '../../shared/vehicle.service';
+import { VehicleService } from '../../../core/services/vehicle.service';
 import { HttpErrorResponse } from '../../../../../node_modules/@angular/common/http';
 
 @Component({
@@ -18,8 +18,8 @@ export class AddInFormContainerComponent implements OnInit {
   ngOnInit() {
   }
 
-  addHandler(vehicle: Vehicle) {    
-    console.log(vehicle);    
+  addHandler(vehicle: Vehicle) {
+    console.log(vehicle);
     this.vehicleService.add(vehicle).subscribe(
       (res) => { this.handleSuccessfulResponse(vehicle.placa); },
       (error) => { this.handleFailedResponse(error); }

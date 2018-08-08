@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Vehicle} from "./vehicle.interface";
-import {catchError} from "rxjs/internal/operators";
+import {Vehicle} from "../../add-in/shared/vehicle.interface";
 import {Observable} from "rxjs";
 
 @Injectable({
