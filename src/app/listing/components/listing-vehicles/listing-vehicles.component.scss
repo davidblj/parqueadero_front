@@ -1,3 +1,4 @@
+@import "~src/variables.scss";
 
 .list {
 
@@ -7,7 +8,7 @@
 
     &__vehicle {
 
-        flex: 1 0 25%;
+        flex: 1 0 33%;
         margin: 4rem;
 
         &_empty {
@@ -15,5 +16,16 @@
           content: '';
           opacity: 0;
         }
+    }
+
+    &__no-results {
+
+        font-size: 4rem;
+        font-weight: 300;
+        color: $color-white;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
     }
 }

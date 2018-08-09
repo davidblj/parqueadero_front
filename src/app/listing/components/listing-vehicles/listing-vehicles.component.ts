@@ -18,32 +18,52 @@ export class ListingVehiclesComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-    // as specified by the flex basis prop (25%)
-    this.getEmptyRowsToSpawn(3);
+  ngOnInit() {    
+    this.getEmptyRowsToSpawn(2);
   }
 
-  deleteHandler(id: string) {
-  this.delete.emit(id);
+  deleteHandler(id: string) {    
+    this.delete.emit(id);
   }
 
-  deleteItem(id: string) {
-    console.log('a deletion !');
+  deleteItem(id: string) {    
+
+    let index = this.findIndex(id);        
+    this.vehicles.splice(index, 1);
   }
 
-  getEmptyRowsToSpawn(rowLength: number) {
+  setIsEmpty() {    
+    return this.vehicles.length == 0;
+  }
+
+  private getEmptyRowsToSpawn(rowLength: number) {
 
     const leftOver = this.vehicles.length % rowLength;
-    const shouldSpan = leftOver > 0;
-    if (shouldSpan) {
+    const shouldSpanEmptyRows = leftOver > 0;
+    if (shouldSpanEmptyRows) {
       const rows = rowLength - leftOver;
-      this.fillEmptyRow(rows);
+      this.spawnIterable(rows);
     }
   }
 
-  fillEmptyRow(size: number) {
+  private spawnIterable(size: number) {
+    
     for (let i = 1; i <= size; i++) {
       this.emptyRows.push('');
     }
+  }
+
+  private findIndex(matchingId: string): number {
+
+    let index = 0;
+    this.vehicles.forEach((vehicle: Vehicle, i) => {
+           
+      if (vehicle.placa === matchingId) { 
+        index = i; 
+        console.log('passing !');
+      }            
+    });
+
+    return index;
   }
 }
