@@ -20,4 +20,8 @@ export class VehicleService {
   list(): Observable<Vehicle[]> {
     return this.http.get<Vehicle[]>(this.baseUrl);
   }
+
+  delete(id: string) {
+    return this.http.delete(`${this.baseUrl}/${id}`);
+  }
 }

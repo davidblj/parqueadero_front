@@ -1,6 +1,7 @@
 
 <div *ngIf="($vehicles | async) as vehicles">
   <app-listing-vehicles
-    [vehicles]="vehicles">
+    [vehicles]="vehicles"
+    (delete)="deleteHandler($event)">
   </app-listing-vehicles>
 </div>

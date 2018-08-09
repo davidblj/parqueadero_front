@@ -3,6 +3,7 @@
 
   <div class="list__vehicle" *ngFor="let vehicle of vehicles">
     <app-listing-vehicle
+      (delete)="deleteHandler($event)"
       [vehicle]="vehicle">
     </app-listing-vehicle>
   </div>

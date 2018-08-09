@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from "@angular/core";
+import {Component, EventEmitter, Input, OnInit, Output} from "@angular/core";
 import {Vehicle} from "../../../utils/models/vehicle.interface";
 
 @Component({
@@ -11,13 +11,24 @@ export class ListingVehiclesComponent implements OnInit {
   @Input()
   vehicles: Vehicle[];
 
+  @Output()
+  delete = new EventEmitter<string>();
+
   emptyRows = [];
 
   constructor() { }
 
   ngOnInit() {
-    // as specified by the flex basis prop
+    // as specified by the flex basis prop (25%)
     this.getEmptyRowsToSpawn(3);
+  }
+
+  deleteHandler(id: string) {
+  this.delete.emit(id);
+  }
+
+  deleteItem(id: string) {
+    console.log('a deletion !');
   }
 
   getEmptyRowsToSpawn(rowLength: number) {

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from "@angular/core";
+import {Component, EventEmitter, Input, OnInit, Output} from "@angular/core";
 import {Vehicle} from "../../../utils/models/vehicle.interface";
 
 @Component({
@@ -11,6 +11,9 @@ export class ListingVehicleComponent implements OnInit {
   @Input()
   vehicle: Vehicle;
 
+  @Output()
+  delete = new EventEmitter<string>();
+
   iconPath;
 
   constructor() { }
@@ -22,6 +25,10 @@ export class ListingVehicleComponent implements OnInit {
   setIcon() {
     if (this.vehicle.tipo === 'CARRO') { this.iconPath = 'assets/car.svg'; }
     if (this.vehicle.tipo === 'MOTO') { this.iconPath = 'assets/scooter.svg'; }
+  }
+
+  onDelete() {
+    this.delete.emit(this.vehicle.placa);
   }
 
   get date() {
