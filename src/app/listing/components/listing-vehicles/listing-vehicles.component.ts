@@ -13,14 +13,13 @@ export class ListingVehiclesComponent implements OnInit {
 
   @Output()
   delete = new EventEmitter<string>();
-
-  defaultEmptyRows = 2;
+  
   emptyRows = [];
 
   constructor() { }
 
   ngOnInit() {    
-    this.getEmptyRowsToSpawn(this.defaultEmptyRows);
+    this.getEmptyRowsToSpawn();
   }
 
   deleteHandler(id: string) {    
@@ -31,16 +30,16 @@ export class ListingVehiclesComponent implements OnInit {
 
     let index = this.findIndex(id);        
     this.vehicles.splice(index, 1);
-    const rowsToSpawn = this.defaultEmptyRows - 1;
-    this.getEmptyRowsToSpawn(rowsToSpawn);
+    this.getEmptyRowsToSpawn();
   }
 
   setIsEmpty() {    
     return this.vehicles.length == 0;
   }
 
-  getEmptyRowsToSpawn(rowLength: number) {
+  getEmptyRowsToSpawn() {
 
+    const rowLength = 2;
     const leftOver = this.vehicles.length % rowLength;
     const shouldSpanEmptyRows = leftOver > 0;
 
@@ -52,6 +51,7 @@ export class ListingVehiclesComponent implements OnInit {
 
   private spawnIterable(size: number) {
     
+    this.emptyRows = [];
     for (let i = 1; i <= size; i++) {
       this.emptyRows.push('');
     }
@@ -60,12 +60,8 @@ export class ListingVehiclesComponent implements OnInit {
   private findIndex(matchingId: string): number {
 
     let index = 0;
-    this.vehicles.forEach((vehicle: Vehicle, i) => {
-           
-      if (vehicle.placa === matchingId) { 
-        index = i; 
-        console.log('passing !');
-      }            
+    this.vehicles.forEach((vehicle: Vehicle, i) => {           
+      if (vehicle.placa === matchingId) { index = i; }            
     });
 
     return index;

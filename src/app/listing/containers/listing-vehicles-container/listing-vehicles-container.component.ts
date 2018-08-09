@@ -23,7 +23,6 @@ export class ListingVehiclesContainerComponent implements OnInit {
               private modalService: BsModalService) { }
 
   ngOnInit() {
-    // this.modalService.show(ListingModalComponent, {});
     this.$vehicles = this.vehicleService.list();
   }
 
