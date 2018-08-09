@@ -18,8 +18,7 @@ export class AddInFormContainerComponent implements OnInit {
   ngOnInit() {
   }
 
-  addHandler(vehicle: Vehicle) {
-    console.log(vehicle);
+  addHandler(vehicle: Vehicle) {    
     this.vehicleService.add(vehicle).subscribe(
       (res) => { this.handleSuccessfulResponse(vehicle.placa); },
       (error) => { this.handleFailedResponse(error); }
@@ -45,7 +44,7 @@ export class AddInFormContainerComponent implements OnInit {
   setModalConfig(initialState) {
     return {
       class: 'modal-dialog-centered',
-      animated: false,
+      animated: true,
       initialState
     };
   }
