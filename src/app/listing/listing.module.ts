@@ -5,17 +5,27 @@ import { ListingComponent } from './components/listing/listing.component';
 import { ListingVehiclesContainerComponent } from './containers/listing-vehicles-container/listing-vehicles-container.component';
 import { ListingVehiclesComponent } from './components/listing-vehicles/listing-vehicles.component';
 import { ListingVehicleComponent } from './components/listing-vehicle/listing-vehicle.component';
+import { ListingModalComponent } from './components/listing-modal/listing-modal.component';
+import { ModalModule } from '../../../node_modules/ngx-bootstrap';
 
 @NgModule({
   imports: [
     CommonModule,
-    ListingRoutingModule
+    ListingRoutingModule,
+    ModalModule.forRoot()
+  ],
+  exports: [
+    ListingComponent
+  ],
+  entryComponents: [
+    ListingModalComponent
   ],
   declarations: [
     ListingComponent,
     ListingVehiclesContainerComponent,
     ListingVehiclesComponent,
-    ListingVehicleComponent
+    ListingVehicleComponent,
+    ListingModalComponent
   ]
 })
 export class ListingModule { }

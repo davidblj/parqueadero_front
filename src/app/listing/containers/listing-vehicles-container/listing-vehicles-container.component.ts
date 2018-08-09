@@ -3,6 +3,8 @@ import {Observable} from "rxjs";
 import {Vehicle} from "../../../utils/models/vehicle.interface";
 import {VehicleService} from "../../../core/services/vehicle.service";
 import {ListingVehiclesComponent} from "../../components/listing-vehicles/listing-vehicles.component";
+import { BsModalService } from "../../../../../node_modules/ngx-bootstrap";
+import { ListingModalComponent } from "../../components/listing-modal/listing-modal.component";
 
 @Component({
   selector: 'app-listing-vehicles-container',
@@ -16,9 +18,11 @@ export class ListingVehiclesContainerComponent implements OnInit {
 
   public $vehicles: Observable<Vehicle[]>;
 
-  constructor(private vehicleService: VehicleService) { }
+  constructor(private vehicleService: VehicleService,
+              private modalService: BsModalService) { }
 
   ngOnInit() {
+    this.modalService.show(ListingModalComponent, {});
     this.$vehicles = this.vehicleService.list();
   }
 
@@ -30,7 +34,7 @@ export class ListingVehiclesContainerComponent implements OnInit {
   }
 
   handleSuccessfulResponse(id: string) {
-    // show modal
+    this.modalService.show(ListingModalComponent, {});
     this.listingComponent.deleteItem(id);
   }
 

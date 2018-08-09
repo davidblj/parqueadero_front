@@ -1,0 +1,64 @@
+@import "~src/variables.scss";
+
+.custom-modal {
+
+    padding: 2rem
+}
+
+.bill {
+
+    &__section {
+
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.5rem;
+
+        &_spaced {
+
+            margin: 2rem 2rem;
+        }
+
+        &_hightligth {
+
+            border-top: solid 1px black;
+            margin-top: 2rem;
+        }
+    }
+
+    &__total {
+
+        font-size: 1.7rem;
+    }
+
+    &__label {
+        
+        &_red {
+            color: $color-red;
+        }
+
+        &_bold {
+            font-weight: 700;
+        }
+    }
+
+    &__value {  
+
+        font-weight: 700;
+    }
+
+    &__time {
+
+        display: flex;
+
+        img {
+            align-self: center;
+            height: 1rem;
+            margin-right: 1rem;
+        }
+    }
+
+    &__date {
+
+        font-size: 1.2rem;
+    }
+}
