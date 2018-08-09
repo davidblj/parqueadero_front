@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from "@angular/core";
-import {VehicleType} from "../../shared/vehicle.interface";
+import {VehicleType} from "../../../utils/models/vehicle.interface";
 import {AbstractControl} from "@angular/forms";
 
 @Component({

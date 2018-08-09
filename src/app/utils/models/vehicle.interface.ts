@@ -7,4 +7,5 @@ export interface Vehicle {
   placa: string;
   tipo: VehicleType;
   cilindraje?: string;
+  fechaDeIngreso?: string;
 }

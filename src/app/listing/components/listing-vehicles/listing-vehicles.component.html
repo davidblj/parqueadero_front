@@ -1,12 +1,13 @@
 
 <div class="list">
-  <div class="list__vehicle">
-    <app-listing-vehicle></app-listing-vehicle>
+
+  <div class="list__vehicle" *ngFor="let vehicle of vehicles">
+    <app-listing-vehicle
+      [vehicle]="vehicle">
+    </app-listing-vehicle>
   </div>
-  <div class="list__vehicle">
-      <app-listing-vehicle></app-listing-vehicle>
-  </div>
-  <div class="list__vehicle">
-    <app-listing-vehicle></app-listing-vehicle>
+
+  <div class="list__vehicle list__vehicle_empty"
+       *ngFor="let emptyRow of emptyRows">
   </div>
 </div>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {BsModalService} from "ngx-bootstrap";
 import {AddInModalComponent} from "../../components/add-in-modal/add-in-modal.component";
-import {Vehicle} from "../../shared/vehicle.interface";
+import {Vehicle} from "../../../utils/models/vehicle.interface";
 import { VehicleService } from '../../../core/services/vehicle.service';
 import { HttpErrorResponse } from '../../../../../node_modules/@angular/common/http';
 

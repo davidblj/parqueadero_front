@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Vehicle} from "../../add-in/shared/vehicle.interface";
+import {Vehicle} from "../../utils/models/vehicle.interface";
 import {Observable} from "rxjs";
 
 @Injectable({
@@ -14,5 +14,10 @@ export class VehicleService {
 
   add(vehicle: Vehicle): Observable<any> {
     return this.http.post(this.baseUrl, vehicle);
+  }
+
+  // pipe the value to return the vehicles !
+  list(): Observable<Vehicle[]> {
+    return this.http.get<Vehicle[]>(this.baseUrl);
   }
 }

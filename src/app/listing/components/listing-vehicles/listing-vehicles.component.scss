@@ -9,5 +9,11 @@
 
         flex: 1 0 25%;
         margin: 4rem;
+
+        &_empty {
+
+          content: '';
+          opacity: 0;
+        }
     }
 }

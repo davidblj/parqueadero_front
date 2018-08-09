@@ -1,7 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from "@angular/core";
 import {FormGroup, FormBuilder, Validators, FormControl} from "../../../../../node_modules/@angular/forms";
 import {FormConfig} from './form-config';
-import {Vehicle, VehicleType} from "../../shared/vehicle.interface";
+import {Vehicle, VehicleType} from "../../../utils/models/vehicle.interface";
 import {numericValidator} from "../../shared/custom-validators";
 
 @Component({

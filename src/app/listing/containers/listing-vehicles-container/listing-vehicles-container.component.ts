@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Observable} from "rxjs";
+import {Vehicle} from "../../../utils/models/vehicle.interface";
+import {VehicleService} from "../../../core/services/vehicle.service";
 
 @Component({
   selector: 'app-listing-vehicles-container',
@@ -7,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListingVehiclesContainerComponent implements OnInit {
 
-  constructor() { }
+  public $vehicles: Observable<Vehicle[]>;
+
+  constructor(private vehicleService: VehicleService) { }
 
   ngOnInit() {
+    this.$vehicles = this.vehicleService.list();
   }
-
 }

@@ -15,7 +15,7 @@ import { ListingVehicleComponent } from './components/listing-vehicle/listing-ve
     ListingComponent,
     ListingVehiclesContainerComponent,
     ListingVehiclesComponent,
-    ListingVehicleComponent    
+    ListingVehicleComponent
   ]
 })
 export class ListingModule { }
