@@ -7,6 +7,7 @@ import { ListingVehiclesComponent } from './components/listing-vehicles/listing-
 import { ListingVehicleComponent } from './components/listing-vehicle/listing-vehicle.component';
 import { ListingModalComponent } from './components/listing-modal/listing-modal.component';
 import { ModalModule } from '../../../node_modules/ngx-bootstrap';
+import { ListingSearchComponent } from './components/listing-search/listing-search.component';
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import { ModalModule } from '../../../node_modules/ngx-bootstrap';
     ListingVehiclesContainerComponent,
     ListingVehiclesComponent,
     ListingVehicleComponent,
-    ListingModalComponent
+    ListingModalComponent,
+    ListingSearchComponent
   ]
 })
 export class ListingModule { }

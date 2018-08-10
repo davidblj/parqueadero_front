@@ -1,0 +1,39 @@
+@import "~src/variables.scss";
+
+.search {
+
+    background-color: $primary-color-dark-1;
+    padding: 2rem 4rem;
+    display: flex;
+    align-items: center;
+
+    &__icon {
+
+        height: 3.5rem;
+    }
+
+    &__input-box {
+
+        flex-grow: 1;
+        margin-left: 2.5rem;
+    }
+
+    &__input {
+        
+        width: 100%;
+        border: none;
+        outline: none;
+        background: $primary-color-dark-1;
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: white;
+        
+        &::placeholder {
+            
+            color: $primary-color-light-2;
+            text-transform: lowercase;
+            letter-spacing: 0;
+        }
+    }
+}
