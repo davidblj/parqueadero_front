@@ -3,7 +3,6 @@ import {BsModalService} from "ngx-bootstrap";
 import {AddInModalComponent} from "../../components/add-in-modal/add-in-modal.component";
 import {Vehicle} from "../../../utils/models/vehicle.interface";
 import { VehicleService } from '../../../core/services/vehicle.service';
-import { HttpErrorResponse } from '../../../../../node_modules/@angular/common/http';
 
 @Component({
   selector: 'app-add-in-form-container',
@@ -31,11 +30,11 @@ export class AddInFormContainerComponent implements OnInit {
   }
 
   handleFailedResponse(error) {
-    const config = this.setModalConfig({ id: null, errorMessage: error.error.mensaje, error: true });
+    console.log('this aint an error');
+    const config = this.setModalConfig({ id: null, errorMessage: error.error.message, error: true });
     this.showModal(config);
   }
 
-  // TODO: type checking
   showModal(config) {
     this.setModalConfig(config);
     this.modalService.show(AddInModalComponent, config);
