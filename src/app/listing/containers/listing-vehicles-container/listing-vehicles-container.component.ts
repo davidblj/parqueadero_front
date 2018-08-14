@@ -34,13 +34,15 @@ export class ListingVehiclesContainerComponent implements OnInit {
   }
 
   handleSuccessfulResponse(id: string, bill: Bill) {
-    const config = this.setModalConfig({bill: bill});
+    const config = this.setModalConfig({bill: bill, errorMessage: '', error: false});
     this.modalService.show(ListingModalComponent, config);
     this.listingComponent.deleteItem(id);
   }
 
   handleFailedResponse() {
-    // show modal
+    const message = 'No pudimos realizar la transacción';
+    const config = this.setModalConfig({bill: null, errorMessage: message, error: true});
+    this.modalService.show(ListingModalComponent, config);
   }
 
   setModalConfig(initialState) {

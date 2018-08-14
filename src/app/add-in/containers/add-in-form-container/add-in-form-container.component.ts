@@ -30,8 +30,12 @@ export class AddInFormContainerComponent implements OnInit {
   }
 
   handleFailedResponse(error) {
-    console.log('this aint an error');
-    const config = this.setModalConfig({ id: null, errorMessage: error.error.message, error: true });
+        
+    const message = typeof error.error === 'string' ? 
+        JSON.parse(error.error).message : 
+        'No pudimos realizar la transacción';
+
+    const config = this.setModalConfig({ id: null, errorMessage: message, error: true });
     this.showModal(config);
   }
 

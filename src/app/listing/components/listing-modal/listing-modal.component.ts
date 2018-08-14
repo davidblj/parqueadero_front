@@ -10,6 +10,9 @@ export class ListingModalComponent implements OnInit {
 
   bill: Bill;
   value = 18000;
+  
+  error: boolean;
+  errorMessage: string;
 
   constructor() { }
 
