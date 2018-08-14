@@ -1,0 +1,43 @@
+
+.custom-modal {
+
+  padding: 2rem;
+  font-family: 'Nunito', sans-serif;
+
+  &__header {
+
+    font-size: 2.2rem;
+    margin-bottom: .5rem;
+    font-weight: 700;    
+    text-align: center;
+
+    &_error {
+      color: $color-red;
+    }
+  }
+
+  &__body {
+    text-align: center;
+  }
+
+  &__text {
+
+    font-size: 1.7rem;
+    display: block;
+
+    &_highlight {
+
+      padding: 1rem 0;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: $color-green;
+    }
+  }
+
+  // p style reset
+  p {
+      padding: 0;
+  }
+}
